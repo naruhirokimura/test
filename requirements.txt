@@ -1,0 +1,10 @@
+
+numpy
+pandas
+gunicorn
+matplotlib
+XGBoost
+metrics
+Sklearn
+StandardScaler
+mljar-mercury
