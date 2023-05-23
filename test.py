@@ -3,9 +3,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-st.write("hellow")
-
-    
+st.write("hellowed")
 st.button('Hit me')
 st.slider('Slide me', min_value=0, max_value=10)
 st.select_slider('Slide to select', options=[1,'2'])
