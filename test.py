@@ -5,8 +5,6 @@ import streamlit as st
 
 st.write("hellow")
 
-with open('model.pickle', 'rb') as f:
-    model = pickle.load(f)
     
 st.button('Hit me')
 st.slider('Slide me', min_value=0, max_value=10)
@@ -20,3 +18,6 @@ sample = np.array([['Tbil','TP','ALP'],[Tbil, TP, ALT]])
 dfsample = pd.DataFrame(data=[[Tbil, TP, ALT]], columns=['T-Bil (md/dl)', 'Total protein (g/dL)', 'ALT (IU/L)'])
 st.write(dfsample)    
 
+
+with open('model.pickle', 'rb') as f:
+    model = pickle.load(f)
