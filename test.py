@@ -45,11 +45,11 @@ sc = ax1.scatter(df3Dresnon.TP, df3Dresnon.GPT, df3Dresnon.Tbil, s=100, color="r
 sc = ax1.scatter(df3Dnonres.TP, df3Dnonres.GPT, df3Dnonres.Tbil, s=100, color="blue")
 sc = ax1.scatter(dfsample.TP, dfsample.ALT, dfsample.Tbil, s=100, color="green")
 st.pyplot(fig)
-st.write(Black: Non responder and Machine learning predicted)
-st.write(Blue: non responder but Machine learning mis predicted)
-st.write(Red: responder but Machine learning mis predicted)
-st.write(Purple: responder and Machine learning predicted)
-st.write(Blue: sample data)
+st.write("Black: Non responder and Machine learning predicted")
+st.write("Blue: non responder but Machine learning mis predicted")
+st.write("Red: responder but Machine learning mis predicted")
+st.write("Purple: responder and Machine learning predicted")
+st.write("Blue: sample data")
 
 st.write(pd1)
 if pd1[0,1] <0.841:
