@@ -43,7 +43,7 @@ sc = ax1.scatter(df3Dnon.TP, df3Dnon.GPT, df3Dnon.Tbil, s=100,color="Black")
 sc = ax1.scatter(df3Dres.TP, df3Dres.GPT, df3Dres.Tbil, s=100, color="purple")
 sc = ax1.scatter(df3Dresnon.TP, df3Dresnon.GPT, df3Dresnon.Tbil, s=100, color="red")
 sc = ax1.scatter(df3Dnonres.TP, df3Dnonres.GPT, df3Dnonres.Tbil, s=100, color="blue")
-sc = ax1.scatter(dfsample.TP, dfsample.GPT, dfsample.Tbil, s=100, color="green")
+sc = ax1.scatter(dfsample.TP, dfsample.ALT, dfsample.Tbil, s=100, color="green")
 st.pyplot(fig)
 
 
