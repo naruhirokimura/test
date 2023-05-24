@@ -21,7 +21,7 @@ Tbil = st.sidebar.slider(label='T-Bil (mg/dL)', min_value=0.2, max_value=4.3,val
 TP = st.sidebar.slider(label='Total protein (g/dL)', min_value=0.2, max_value=8.9,value=1.0, step=0.1)
 ALT = st.sidebar.slider(label='ALT (IU/L)', min_value=30, max_value=1500,value=100)
 
-
+fig = plt.figure()
 fig.set_size_inches(7, 7)
 ax1 = fig.add_subplot(111, projection='3d')
 sc = ax1.scatter(df3Dnon.TP, df3Dnon.GPT, df3Dnon.Tbil, s=100,color="Black")
