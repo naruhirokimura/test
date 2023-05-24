@@ -28,10 +28,10 @@ def main():
     global is_first_run
     if is_first_run:
     st.title('Machine learning for predicting treatment response')
-        st.write('Developping machine learning.')
-        train_model()
-        st.write('Learning completed.')
-        is_first_run = False
+    st.write('Developping machine learning.')
+    train_model()
+    st.write('Learning completed.')
+    is_first_run = False
 
 TP = st.sidebar.slider(label='Total protein (g/dL)', min_value=5.5, max_value=9.3,value=8.0, step=0.1)
 ALT = st.sidebar.slider(label='ALT (IU/L)', min_value=8, max_value=1058,value=80)
