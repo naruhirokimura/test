@@ -18,8 +18,8 @@ model = XGBClassifier(scale_pos_weight=3,
                        max_depth = 35,
                        n_estimators = 40).fit(X_train, Y_train)
 
-TP = st.sidebar.slider(label='Total protein (g/dL)', min_value=5.5, max_value=9.3,value=1.0, step=0.1)
-ALT = st.sidebar.slider(label='ALT (IU/L)', min_value=8, max_value=1058,value=100)
+TP = st.sidebar.slider(label='Total protein (g/dL)', min_value=5.5, max_value=9.3,value=8.0, step=0.1)
+ALT = st.sidebar.slider(label='ALT (IU/L)', min_value=8, max_value=1058,value=80)
 Tbil = st.sidebar.slider(label='T-Bil (mg/dL)', min_value=0.2, max_value=4.3,value=1.0, step=0.1)
 
 sample = np.array([['TP','ALT','Tbil'],[TP, ALT, Tbil]])
@@ -29,7 +29,7 @@ st.write(dfsample)
 pd1=model.predict_proba(dfsample)
 
 fig = plt.figure()
-fig.set_size_inches(3, 3)
+fig.set_size_inches(2, 2)
 ax1 = fig.add_subplot(111, projection='3d')
 df3Dnon = pd.read_csv('pcbmlvalidation3Dtarget-XGB-.csv')
 df3Dres = pd.read_csv('pcbmlvalidation3Dtarget+XGB+.csv')
@@ -45,7 +45,11 @@ sc = ax1.scatter(df3Dresnon.TP, df3Dresnon.GPT, df3Dresnon.Tbil, s=100, color="r
 sc = ax1.scatter(df3Dnonres.TP, df3Dnonres.GPT, df3Dnonres.Tbil, s=100, color="blue")
 sc = ax1.scatter(dfsample.TP, dfsample.ALT, dfsample.Tbil, s=100, color="green")
 st.pyplot(fig)
-
+st.write(Black: Non responder and Machine learning predicted)
+st.write(Blue: non responder but Machine learning mis predicted)
+st.write(Red: responder but Machine learning mis predicted)
+st.write(Purple: responder and Machine learning predicted)
+st.write(Blue: sample data)
 
 st.write(pd1)
 if pd1[0,1] <0.841:
