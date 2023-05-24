@@ -49,7 +49,7 @@ st.write("Black: Non responder and Machine learning predicted")
 st.write("Blue: non responder but Machine learning mis predicted")
 st.write("Red: responder but Machine learning mis predicted")
 st.write("Purple: responder and Machine learning predicted")
-st.write("Blue: sample data")
+st.write("Green: sample data")
 
 st.write(pd1)
 if pd1[0,1] <0.841:
