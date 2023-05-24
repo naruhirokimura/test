@@ -26,8 +26,7 @@ def train_model():
     ...
 def main():
     global is_first_run
-    if is_first_run:
-    train_model()
+    if is_first_run: train_model()
     is_first_run = False
 
 TP = st.sidebar.slider(label='Total protein (g/dL)', min_value=5.5, max_value=9.3,value=8.0, step=0.1)
