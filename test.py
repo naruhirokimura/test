@@ -22,8 +22,8 @@ TP = st.sidebar.slider(label='Total protein (g/dL)', min_value=0.2, max_value=8.
 ALT = st.sidebar.slider(label='ALT (IU/L)', min_value=30, max_value=1500,value=100)
 Tbil = st.sidebar.slider(label='T-Bil (mg/dL)', min_value=0.2, max_value=4.3,value=1.0, step=0.1)
 
-sample = np.array([['Tbil','TP','ALT'],[Tbil, TP, ALT]])
-dfsample = pd.DataFrame(data=[[Tbil, TP, ALT]], columns=['Tbil','TP','ALT'])
+sample = np.array([['TP','ALT','Tbil'],[TP, ALT, Tbil]])
+dfsample = pd.DataFrame(data=[[TP, ALT, Tbil]], columns=['TP','ALT','Tbil'])
 st.write(dfsample)    
     
 pd1=model.predict_proba(dfsample)
