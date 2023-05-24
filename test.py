@@ -30,6 +30,12 @@ st.write(dfsample)
     
 pd1=model.predict_proba(dfsample)
 
+st.write(pd1)
+if pd1[0,1] <0.841:
+  st.write("This patient may not archieve Paris II criteria, please consider additional treatment.")
+else:
+  st.write('This patient will archieve Paris II criteria')
+
 fig = plt.figure()
 fig.set_size_inches(7, 7)
 ax1 = fig.add_subplot(111, projection='3d')
@@ -53,8 +59,3 @@ st.write("Red: responder but Machine learning mis predicted")
 st.write("Purple: responder and Machine learning predicted")
 st.write("Green: sample data")
 
-st.write(pd1)
-if pd1[0,1] <0.841:
-  st.write("This patient will not archieve Paris II criteria")
-else:
-  st.write('This patient will archieve Paris II criteria')
