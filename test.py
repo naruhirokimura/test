@@ -29,7 +29,7 @@ st.write(dfsample)
 pd1=model.predict_proba(dfsample)
 
 fig = plt.figure()
-fig.set_size_inches(7, 7)
+fig.set_size_inches(3, 3)
 ax1 = fig.add_subplot(111, projection='3d')
 df3Dnon = pd.read_csv('pcbmlvalidation3Dtarget-XGB-.csv')
 df3Dres = pd.read_csv('pcbmlvalidation3Dtarget+XGB+.csv')
