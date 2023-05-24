@@ -18,9 +18,15 @@ model = XGBClassifier(scale_pos_weight=3,
                        max_depth = 35,
                        n_estimators = 40).fit(X_train, Y_train)
 
-Tbil = st.sidebar.slider(label='T-Bil (mg/dL)', min_value=0.2, max_value=4.3,value=1.0, step=0.1)
 TP = st.sidebar.slider(label='Total protein (g/dL)', min_value=0.2, max_value=8.9,value=1.0, step=0.1)
 ALT = st.sidebar.slider(label='ALT (IU/L)', min_value=30, max_value=1500,value=100)
+Tbil = st.sidebar.slider(label='T-Bil (mg/dL)', min_value=0.2, max_value=4.3,value=1.0, step=0.1)
+
+sample = np.array([['Tbil','TP','ALT'],[Tbil, TP, ALT]])
+dfsample = pd.DataFrame(data=[[Tbil, TP, ALT]], columns=['Tbil','TP','ALT'])
+st.write(dfsample)    
+    
+pd1=model.predict_proba(dfsample)
 
 fig = plt.figure()
 fig.set_size_inches(7, 7)
@@ -29,17 +35,16 @@ df3Dnon = pd.read_csv('pcbmlvalidation3Dtarget-XGB-.csv')
 df3Dres = pd.read_csv('pcbmlvalidation3Dtarget+XGB+.csv')
 df3Dresnon = pd.read_csv('pcbmlvalidation3Dtarget+XGB-.csv')
 df3Dnonres = pd.read_csv('pcbmlvalidation3Dtarget-XGB+.csv')
+# X,Y,Z軸にラベルを設定
+ax1.set_xlabel("Total Protein")
+ax1.set_ylabel("T-Bil")
+ax1.set_zlabel("ALT")
 sc = ax1.scatter(df3Dnon.TP, df3Dnon.GPT, df3Dnon.Tbil, s=100,color="Black")
 sc = ax1.scatter(df3Dres.TP, df3Dres.GPT, df3Dres.Tbil, s=100, color="purple")
 sc = ax1.scatter(df3Dresnon.TP, df3Dresnon.GPT, df3Dresnon.Tbil, s=100, color="red")
 sc = ax1.scatter(df3Dnonres.TP, df3Dnonres.GPT, df3Dnonres.Tbil, s=100, color="blue")
 st.pyplot(fig)
 
-sample = np.array([['Tbil','TP','ALT'],[Tbil, TP, ALT]])
-dfsample = pd.DataFrame(data=[[Tbil, TP, ALT]], columns=['Tbil','TP','ALT'])
-st.write(dfsample)    
-    
-pd1=model.predict_proba(dfsample)
 
 st.write(pd1)
 if pd1[0,1] <0.841:
