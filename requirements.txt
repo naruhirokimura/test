@@ -7,5 +7,5 @@ XGBoost
 metrics
 Sklearn
 StandardScaler
-mljar-mercury
 scikit-learn
+streamlit
