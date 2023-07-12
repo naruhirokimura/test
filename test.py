@@ -7,6 +7,10 @@ from xgboost import XGBClassifier
 from sklearn import metrics
 import matplotlib.pyplot as plt
 
+st.title('The prediction model for treatrment response in PBC patients')
+st.write('This app aims to predict treatment response for Primary Biliary Cholangitis patients base on Machine learning')
+st.write('Please move slide bars to the data before treatment.')
+
 # 学習データCSVファイル読み込み
 df = pd.read_csv('data for streamlit 20230524.csv')
 Y = df['target']
