@@ -9,3 +9,4 @@ Sklearn
 StandardScaler
 scikit-learn
 streamlit
+pip
