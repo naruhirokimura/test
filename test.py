@@ -32,7 +32,6 @@ st.write(dfsample)
     
 pd1=model.predict_proba(dfsample)
 
-st.write(pd1)
 if pd1[0,1] <0.841:
   st.write("This patient may not archieve Paris II criteria, please consider additional treatment.")
 else:
