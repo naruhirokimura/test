@@ -14,7 +14,6 @@ st.write('Please move slide bars to the data before treatment.')
 
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.30, random_state=2)　
-
 # 学習データCSVファイル読み込み
 df = pd.read_csv('data for streamlit 20230524.csv')
 Y = df['target']
