@@ -15,16 +15,17 @@ st.write('Please move slide bars to the data before treatment.')
 
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.30, random_state=2)
 @st.cache
+# 学習データCSVファイル読み込み
+df = pd.read_csv('data for streamlit 20230524.csv')
+Y = df['target']
+X = df.drop(columns=['target'])
 model = XGBClassifier(scale_pos_weight=3, 
                        colsample_bytree= 0.8,
                        min_child_weight= 0.9,
                        max_depth = 35,
                        n_estimators = 40).fit(X_train, Y_train)
 
-# 学習データCSVファイル読み込み
-df = pd.read_csv('data for streamlit 20230524.csv')
-Y = df['target']
-X = df.drop(columns=['target'])
+
 
 
 
