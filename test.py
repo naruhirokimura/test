@@ -13,8 +13,8 @@ st.write('Please move slide bars to the data before treatment.')
 
 
 
-X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.30, random_state=2)
-@st.cache
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.30, random_state=2)　
+
 # 学習データCSVファイル読み込み
 df = pd.read_csv('data for streamlit 20230524.csv')
 Y = df['target']
@@ -24,10 +24,6 @@ model = XGBClassifier(scale_pos_weight=3,
                        min_child_weight= 0.9,
                        max_depth = 35,
                        n_estimators = 40).fit(X_train, Y_train)
-
-
-
-
 
 TP = st.sidebar.slider(label='Total protein (g/dL)', min_value=5.5, max_value=9.3,value=8.0, step=0.1)
 ALT = st.sidebar.slider(label='ALT (IU/L)', min_value=8, max_value=1058,value=80)
